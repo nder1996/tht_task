@@ -91,9 +91,9 @@ Frontend/
 | DELETE | `/api/Task/{id}` | Eliminar tarea por ID |
 | GET | `/api/Task/debug-table` | Endpoint de diagnóstico para estructura de tabla |
 
-## 💾 Esquema de Base de Datos
+## 💾 Base de Datos
 
-La aplicación utiliza PostgreSQL con la siguiente estructura principal:
+La aplicación utiliza PostgreSQL alojado en la nube (alwaysdata.net) con la siguiente estructura principal:
 
 ```sql
 CREATE TABLE tasks (
@@ -107,6 +107,8 @@ CREATE TABLE tasks (
     update_at TIMESTAMP WITH TIME ZONE
 );
 ```
+
+La cadena de conexión ya está configurada en el proyecto para conectar a la instancia en la nube.
 
 ## 📊 Características de Calidad de Código
 
@@ -139,11 +141,37 @@ CREATE TABLE tasks (
 ### Requisitos
 - SDK .NET 6+
 - Node.js y NPM
-- PostgreSQL
+
+### Librerías y Paquetes a Instalar
+
+#### Backend (.NET)
+```bash
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+dotnet add package Serilog
+dotnet add package Serilog.Extensions.Logging
+dotnet add package Serilog.Sinks.Console
+dotnet add package Serilog.Sinks.File
+```
+
+#### Frontend (Angular)
+```bash
+# Instalación principal
+npm install
+
+# Componentes PrimeNG
+npm install primeng
+npm install primeicons
+npm install @angular/animations
+npm install primeflex
+
+# RxJS para programación reactiva
+npm install rxjs
+```
 
 ### Configuración del Backend
 1. Navega al directorio `Backend/task-management`
-2. Configura la cadena de conexión a la base de datos en `appsettings.json`
+2. La cadena de conexión ya está configurada para la base de datos en la nube
 3. Ejecuta `dotnet restore`
 4. Ejecuta `dotnet run`
 
