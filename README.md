@@ -1,8 +1,12 @@
 # 📋 Sistema de Gestión de Tareas
 
-Un sistema completo de gestión de tareas desarrollado con ASP.NET Core y Angular, implementando arquitectura limpia y principios sólidos de ingeniería de software.
+Un sistema completo de gestión de tareas desarrollado con ASP.NET Core 6+ (backend) y Angular 14+ (frontend), implementando principios de Clean Architecture y Domain-Driven Design.
 
-## 🚀 Características
+![GitHub](https://img.shields.io/badge/.NET%206+-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![GitHub](https://img.shields.io/badge/Angular%2014+-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![GitHub](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+
+## 🚀 Características Principales
 
 - ✅ CRUD completo de tareas (Crear, Leer, Actualizar, Eliminar)
 - 📊 Seguimiento de estados de tareas (PENDIENTE, EN PROGRESO, COMPLETADO)
@@ -11,45 +15,46 @@ Un sistema completo de gestión de tareas desarrollado con ASP.NET Core y Angula
 - 🛡️ Manejo robusto de errores y excepciones
 - 📱 Diseño de interfaz adaptable (responsive)
 - 🌐 Arquitectura API RESTful
+- 🔒 Soft delete para tareas (estado activo/inactivo)
 
-## 🏗️ Arquitectura del Proyecto
+## 📐 Arquitectura del Proyecto
 
-Este proyecto implementa Clean Architecture (Arquitectura Limpia) y principios de Domain-Driven Design (DDD):
+### 🏗️ Backend (ASP.NET Core)
 
-### Backend (ASP.NET Core)
+El proyecto backend implementa Clean Architecture con una clara separación de responsabilidades:
 
 ```
 Backend/
-├── Application/           # Servicios de aplicación, DTOs, interfaces de servicio
-│   ├── Dtos/              # Objetos de transferencia de datos (Request/Response)
-│   └── Service/           # Implementación de servicios de aplicación
-├── Domain/                # Entidades centrales del dominio e interfaces
+├── Application/           # Lógica de aplicación y DTOs
+│   ├── Dtos/              # Objetos de transferencia de datos
+│   └── Service/           # Servicios de aplicación
+├── Domain/                # Entidades y reglas de negocio
 │   ├── Entities/          # Entidades de dominio (TaskEntity)
 │   ├── Exceptions/        # Excepciones personalizadas
 │   └── Interfaces/        # Contratos de repositorios y servicios
-├── Infrastructure/        # Implementaciones de acceso a datos
-│   └── Persistence/       # Implementación de persistencia
+├── Infrastructure/        # Implementaciones técnicas
+│   └── Persistence/       # Capa de acceso a datos
 │       ├── DBContext/     # Contexto de Entity Framework
 │       └── Repository/    # Implementación de repositorios
-└── WebApi/                # Controladores, middleware y puntos de entrada API
-    ├── Controllers/       # Controladores de API
+└── WebApi/                # Capa de presentación
+    ├── Controllers/       # Controladores REST
     ├── Extensions/        # Extensiones de aplicación
-    ├── Filters/           # Filtros de acción y validación
+    ├── Filters/           # Filtros para cross-cutting concerns
     └── Middleware/        # Componentes de pipeline HTTP
 ```
 
-#### 🧩 Patrones de Diseño Implementados
+#### 🧩 Patrones de Diseño Implementados (Backend)
 
-- **Patrón Repositorio**: Abstrae la lógica de acceso a datos (TaskRepository)
-- **Inyección de Dependencias**: Utilizado en toda la aplicación para lograr bajo acoplamiento
-- **Separación tipo CQRS**: División conceptual entre operaciones de lectura y escritura
-- **Patrón Builder**: Para construir respuestas API estructuradas (ResponseApiBuilderService)
-- **Patrón Mediador**: Para gestionar el flujo de solicitudes HTTP a través de middleware
-- **Unidad de Trabajo**: Para la gestión de transacciones de base de datos
-- **Patrón DTO**: Para transferencia de datos entre capas
-- **Filtros de Acción**: Para validación y logging transversal (ValidationFilter, LogOperationAttribute)
+- **Patrón Repositorio**: Abstracción para operaciones de persistencia
+- **Inyección de Dependencias**: Configurada a través de los servicios de .NET Core
+- **Builder Pattern**: Implementado en el `ResponseApiBuilderService` para construir respuestas estandarizadas
+- **Middleware Pipeline**: Gestión de excepciones y validación centralizada
+- **Filtros de Acción**: Para validación y logging transversal
+- **Entidades ricas**: Con validación a nivel de dominio
 
-### Frontend (Angular)
+### 🎨 Frontend (Angular)
+
+La arquitectura del frontend sigue una estructura organizada por módulos y capas de responsabilidad:
 
 ```
 Frontend/
@@ -58,42 +63,66 @@ Frontend/
         └── app/
             └── module/
                 └── task/
-                    ├── application/     # DTOs y modelos de aplicación
-                    │   └── dtos/        # Objetos de transferencia de datos
+                    ├── application/     # Modelos y DTOs
+                    │   └── dtos/        # Data Transfer Objects
                     ├── domain/          # Interfaces y contratos
-                    ├── infrastructure/  # Implementaciones de repositorio
-                    │   └── adapters/    # Adaptadores de API
-                    └── presentation/    # Componentes y páginas
+                    ├── infrastructure/  # Implementaciones
+                    │   └── adapters/    # Adaptadores para API
+                    └── presentation/    # Componentes UI
                         ├── components/  # Componentes reutilizables
-                        └── pages/       # Páginas de la aplicación
+                        └── pages/       # Páginas principales
 ```
 
-#### 🧩 Patrones de Diseño en el Frontend
+#### 🧩 Patrones de Diseño Implementados (Frontend)
 
-- **Patrón de Módulos**: Organización modular para escalabilidad
-- **Patrón Repositorio**: Abstracción de acceso a datos (TaskRepository)
+- **Arquitectura por Módulos**: Separación por funcionalidad
+- **Patrón Repositorio**: Implementado a través de servicios Angular
 - **Patrón Observador**: Programación reactiva con RxJS
-- **Patrón de Componentes**: Composición de interfaz de usuario
-- **Inyección de Dependencias**: Provisión de servicios
-- **Patrón MVVM**: Aprovechando el sistema de binding de Angular
-- **Form Builder**: Construcción programática de formularios reactivos
+- **Componentes Reutilizables**: Encapsulación de lógica UI
+- **Reactive Forms**: Manejo de formularios con validación
+- **Servicios Singleton**: Inyección de dependencias
 
+## 🌐 API RESTful
 
-
-## 🌐 Endpoints de la API
+La API sigue principios REST con respuestas estandarizadas:
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| GET | `/api/Task/tasks` | Obtener todas las tareas |
-| GET | `/api/Task/tasks/{id}` | Obtener tarea por ID |
-| POST | `/api/Task` | Crear nueva tarea |
-| PUT | `/api/Task/{id}` | Actualizar tarea existente |
-| DELETE | `/api/Task/{id}` | Eliminar tarea por ID |
-| GET | `/api/Task/debug-table` | Endpoint de diagnóstico para estructura de tabla |
+| GET | `/api/v1/tasks` | Obtener todas las tareas activas |
+| GET | `/api/v1/tasks/{id}` | Obtener tarea por ID |
+| POST | `/api/v1` | Crear nueva tarea |
+| PUT | `/api/v1/{id}` | Actualizar tarea existente |
+| DELETE | `/api/v1/{id}` | Inactivar tarea (soft delete) |
 
-## 💾 Base de Datos
+### 📊 Estructura de Respuesta API
 
-La aplicación utiliza PostgreSQL alojado en la nube (alwaysdata.net) con la siguiente estructura principal:
+Todas las respuestas de la API siguen un formato estandarizado:
+
+```json
+{
+  "meta": {
+    "message": "Operación Exitosa",
+    "statusCode": 200
+  },
+  "data": {
+    // Datos de respuesta...
+  },
+  "error": null // Solo presente en caso de error
+}
+```
+
+### ⚠️ Manejo de Errores
+
+El sistema implementa un manejo robusto de errores con:
+
+- Mensajes personalizados por tipo de error
+- Códigos HTTP apropiados
+- Información detallada para depuración
+- Middleware especializado para captura global de excepciones
+
+## 💾 Modelo de Datos
+
+El sistema utiliza PostgreSQL con la siguiente estructura principal:
 
 ```sql
 CREATE TABLE tasks (
@@ -108,105 +137,90 @@ CREATE TABLE tasks (
 );
 ```
 
-La cadena de conexión ya está configurada en el proyecto para conectar a la instancia en la nube.
+## 🧰 Tecnologías Utilizadas
 
-## 📊 Características de Calidad de Código
+### 🔙 Backend:
+- **ASP.NET Core 6+**: Framework web moderno y performante
+- **Entity Framework Core**: ORM para acceso a datos
+- **PostgreSQL**: Base de datos relacional
+- **Serilog**: Logging estructurado
+- **Npgsql**: Proveedor de PostgreSQL para .NET
+- **Swagger/OpenAPI**: Documentación de API
 
-- **Logging estructurado**: Utilizando Serilog para registro detallado
-- **Logging de operaciones**: Mediante filtros de acción personalizados
-- **Validación de modelos**: Filtros para validación automática
-- **Manejo global de excepciones**: Mediante middleware especializado
-- **Middleware para métodos no permitidos**: Control de métodos HTTP
-- **Validación de base de datos**: Control de restricciones de integridad
+### 🔝 Frontend:
+- **Angular 14+**: Framework para aplicaciones SPA
+- **PrimeNG**: Biblioteca de componentes UI
+- **RxJS**: Programación reactiva
+- **TypeScript**: Lenguaje tipado para desarrollo frontend
+- **Angular Forms**: Formularios reactivos
+- **Primeflex**: Utilidades CSS para layout
+
+## 🔍 Características de Calidad de Código
+
+- **Logging estructurado**: Implementado con Serilog
+- **Validación automática**: A través de filtros y atributos
+- **Manejo global de excepciones**: Middleware especializado
 - **Respuestas API estandarizadas**: Formato consistente
-
-## 🔧 Tecnologías Utilizadas
-
-### Backend:
-- ASP.NET Core (.NET 6+)
-- Entity Framework Core
-- PostgreSQL
-- Serilog (Logging estructurado)
-- Npgsql (Proveedor PostgreSQL)
-
-### Frontend:
-- Angular (v14+)
-- PrimeNG (Componentes UI)
-- RxJS (Programación reactiva)
-- TypeScript
-- Angular Forms (Formularios reactivos)
+- **Restricciones de integridad**: Validación en múltiples capas
+- **SOLID**: Implementación de principios sólidos de diseño
 
 ## 🚀 Configuración e Instalación
 
-### Requisitos
+### Requisitos Previos
 - SDK .NET 6+
 - Node.js y NPM
+- Conexión a internet (PostgreSQL está alojado en la nube en alwaysdata.net)
 
-### Librerías y Paquetes a Instalar
-
-#### Backend (.NET)
-```bash
-dotnet add package Microsoft.EntityFrameworkCore
-dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
-dotnet add package Serilog
-dotnet add package Serilog.Extensions.Logging
-dotnet add package Serilog.Sinks.Console
-dotnet add package Serilog.Sinks.File
-```
-
-#### Frontend (Angular)
-```bash
-# Instalación principal
-npm install
-
-# Componentes PrimeNG
-npm install primeng
-npm install primeicons
-npm install @angular/animations
-npm install primeflex
-
-# RxJS para programación reactiva
-npm install rxjs
-```
-
-### Configuración del Backend
+### ⚙️ Configuración del Backend
 1. Navega al directorio `Backend/task-management`
 2. La cadena de conexión ya está configurada para la base de datos en la nube
 3. Ejecuta `dotnet restore`
 4. Ejecuta `dotnet run`
 
-### Configuración del Frontend
+### ⚙️ Configuración del Frontend
 1. Navega al directorio `Frontend/task-management`
 2. Ejecuta `npm install`
-3. Configura la URL de la API en los archivos de environments
-4. Ejecuta `ng serve`
+3. Ejecuta `ng serve`
+4. Accede a la aplicación en `http://localhost:4200`
 
+### 📚 Bibliotecas Principales
 
+#### Backend (.NET)
+```bash
+dotnet add package Microsoft.EntityFrameworkCore v6.0.25
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL v6.0.22
+dotnet add package Serilog v3.0.1
+dotnet add package Serilog.Extensions.Logging v7.0.0
+dotnet add package Serilog.Sinks.Console v4.1.0
+dotnet add package Serilog.Sinks.File v5.0.0
+```
 
----
+#### Frontend (Angular)
+```bash
+# Angular core v14.3.0
+npm install primeng v14.2.3
+npm install primeicons v6.0.1
+npm install @angular/animations v14.3.0
+npm install primeflex v3.3.1
+npm install rxjs v7.8.1
+```
 
 ## 📐 Principios de Arquitectura Aplicados
 
-### Implementación de Clean Architecture
+### ✨ Clean Architecture
 
-La aplicación implementa Clean Architecture con las siguientes capas bien definidas:
+El sistema implementa Clean Architecture con las siguientes capas:
 
-1. **Capa de Dominio** - Lógica de negocio central, entidades e interfaces de dominio
-2. **Capa de Aplicación** - Servicios de aplicación, DTOs y casos de uso
-3. **Capa de Infraestructura** - Aspectos externos como base de datos, sistemas de archivos y servicios de terceros
-4. **Capa de Presentación** - Interfaz de usuario o endpoints API
+1. **Capa de Dominio**: Entidades, interfaces de repositorio y reglas de negocio
+2. **Capa de Aplicación**: Servicios, DTOs y orquestación de lógica de negocio
+3. **Capa de Infraestructura**: Implementaciones concretas de repositorios y servicios externos
+4. **Capa de Presentación**: Controllers REST (backend) y componentes Angular (frontend)
 
-Esta separación garantiza:
-- Independencia de frameworks
-- Testabilidad
-- Independencia de UI
-- Independencia de base de datos
-- Independencia de agentes externos
+### 🛡️ Principios SOLID
 
-### Aplicación de Principios SOLID
+- **S**: Cada clase tiene una única responsabilidad (ej: TaskService, TaskRepository)
+- **O**: Las clases están abiertas para extensión (ej: middleware extensible)
+- **L**: Los subtipos son sustituibles por sus tipos base (ej: ApiException y sus derivadas)
+- **I**: Interfaces específicas para cada necesidad (ITaskService, ITaskRepository)
+- **D**: Dependencia de abstracciones (controladores dependen de interfaces)
 
-- **Principio de Responsabilidad Única (SRP)**: Cada clase tiene una única responsabilidad
-- **Principio Abierto/Cerrado (OCP)**: Las clases están abiertas para extensión pero cerradas para modificación
-- **Principio de Sustitución de Liskov (LSP)**: Los subtipos son sustituibles por sus tipos base
-- **Principio de Segregación de Interfaces (ISP)**: Múltiples interfaces específicas en lugar de una interfaz de propósito general
-- **Principio de Inversión de Dependencias (DIP)**: Los módulos de alto nivel dependen de abstracciones, no de implementaciones concretas
