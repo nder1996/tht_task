@@ -3,15 +3,27 @@ using task_management.Domain.Exceptions;
 
 namespace task_management.WebApi.Middleware
 {
+
+    /// <summary>
+    /// Middleware que maneja respuestas con código de estado 405 (Method Not Allowed)
+    /// </summary>
     public class MethodNotAllowedMiddleware
     {
         private readonly RequestDelegate _next;
 
+        /// <summary>
+        /// Constructor del middleware
+        /// </summary>
+        /// <param name="next">Delegado para la siguiente acción en el pipeline</param>
         public MethodNotAllowedMiddleware(RequestDelegate next)
         {
             _next = next;
         }
 
+        /// <summary>
+        /// Procesa la solicitud HTTP y maneja errores de método no permitido
+        /// </summary>
+        /// <param name="context">Contexto HTTP de la solicitud actual</param>
         public async Task InvokeAsync(HttpContext context)
         {
             await _next(context);

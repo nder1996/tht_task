@@ -10,11 +10,20 @@ namespace task_management.WebApi.Middleware
     public class ValidationExceptionMiddleware
     {
         private readonly RequestDelegate _next;
+
+        /// <summary>
+        /// Constructor del middleware ValidationExceptionMiddleware.
+        /// </summary>
+        /// <param name="next">Delegate para la siguiente middleware en la pipeline.</param>
         public ValidationExceptionMiddleware(RequestDelegate next)
         {
             _next = next;
         }
 
+        /// <summary>
+        /// Método principal del middleware que maneja errores de validación.
+        /// </summary>
+        /// <param name="context">Contexto de la solicitud HTTP.</param>
         public async Task InvokeAsync(HttpContext context)
         {
             var originalBodyStream = context.Response.Body;
@@ -68,6 +77,10 @@ namespace task_management.WebApi.Middleware
         }
 
     }
+
+    /// <summary>
+    /// Clase de extensión para registrar el middleware ValidationExceptionMiddleware en la pipeline de solicitud.
+    /// </summary>
     public static class ValidationExceptionMiddlewareExtensions
     {
         public static IApplicationBuilder UseCustomErrorHandling(this IApplicationBuilder builder)

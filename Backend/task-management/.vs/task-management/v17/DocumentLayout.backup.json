@@ -3,16 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\middleware\\validationexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\middleware\\validationexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\middleware\\methodnotallowedmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\middleware\\methodnotallowedmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\filters\\validationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\extensions\\applicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\extensions\\applicationbuilderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\exceptions\\methodnotallowedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\exceptions\\methodnotallowedexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\exceptions\\apiexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\exceptions\\apiexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\interfaces\\itaskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\interfaces\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\domain\\interfaces\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\infrastructure\\persistence\\dbcontext\\taskdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\infrastructure\\persistence\\dbcontext\\taskdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\webapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\webapi\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\application\\service\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\application\\service\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\infrastructure\\persistence\\repository\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\infrastructure\\persistence\\repository\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\domain\\entities\\tasksentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,8 +67,12 @@
       "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\application\\dtos\\request\\taskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\application\\service\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\application\\service\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|c:\\users\\usuario\\videos\\tht_task\\backend\\task-management\\task-management\\infrastructure\\persistence\\repository\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED20B17A-FC40-4CEF-ABCD-E689C30D2630}|task-management\\task-management.csproj|solutionrelative:task-management\\infrastructure\\persistence\\repository\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +82,167 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ValidationExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\ValidationExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "task-management\\WebApi\\Middleware\\ValidationExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\ValidationExceptionMiddleware.cs",
+              "RelativeToolTip": "task-management\\WebApi\\Middleware\\ValidationExceptionMiddleware.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAFIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:20:01.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MethodNotAllowedMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\MethodNotAllowedMiddleware.cs",
+              "RelativeDocumentMoniker": "task-management\\WebApi\\Middleware\\MethodNotAllowedMiddleware.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\MethodNotAllowedMiddleware.cs",
+              "RelativeToolTip": "task-management\\WebApi\\Middleware\\MethodNotAllowedMiddleware.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwBkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:19:07.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "task-management\\WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "task-management\\WebApi\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAAE8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:19:00.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ValidationFilter.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Filters\\ValidationFilter.cs",
+              "RelativeDocumentMoniker": "task-management\\WebApi\\Filters\\ValidationFilter.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Filters\\ValidationFilter.cs",
+              "RelativeToolTip": "task-management\\WebApi\\Filters\\ValidationFilter.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:17:58.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "task-management\\Domain\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:16:42.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MethodNotAllowedException.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\MethodNotAllowedException.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Exceptions\\MethodNotAllowedException.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\MethodNotAllowedException.cs",
+              "RelativeToolTip": "task-management\\Domain\\Exceptions\\MethodNotAllowedException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:16:17.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BadRequestException.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\BadRequestException.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Exceptions\\BadRequestException.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\BadRequestException.cs",
+              "RelativeToolTip": "task-management\\Domain\\Exceptions\\BadRequestException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:15:45.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApiException.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\ApiException.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Exceptions\\ApiException.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Exceptions\\ApiException.cs",
+              "RelativeToolTip": "task-management\\Domain\\Exceptions\\ApiException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:14:40.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationBuilderExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Extensions\\ApplicationBuilderExtensions.cs",
+              "RelativeDocumentMoniker": "task-management\\WebApi\\Extensions\\ApplicationBuilderExtensions.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Extensions\\ApplicationBuilderExtensions.cs",
+              "RelativeToolTip": "task-management\\WebApi\\Extensions\\ApplicationBuilderExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:14:34.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ITaskService.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Interfaces\\ITaskService.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Interfaces\\ITaskService.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Interfaces\\ITaskService.cs",
+              "RelativeToolTip": "task-management\\Domain\\Interfaces\\ITaskService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:13:25.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ITaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Interfaces\\ITaskRepository.cs",
+              "RelativeDocumentMoniker": "task-management\\Domain\\Interfaces\\ITaskRepository.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Interfaces\\ITaskRepository.cs",
+              "RelativeToolTip": "task-management\\Domain\\Interfaces\\ITaskRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowCwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:11:56.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TaskDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Infrastructure\\Persistence\\DBContext\\TaskDbContext.cs",
+              "RelativeDocumentMoniker": "task-management\\Infrastructure\\Persistence\\DBContext\\TaskDbContext.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Infrastructure\\Persistence\\DBContext\\TaskDbContext.cs",
+              "RelativeToolTip": "task-management\\Infrastructure\\Persistence\\DBContext\\TaskDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:10:46.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Program.cs",
               "RelativeDocumentMoniker": "task-management\\Program.cs",
@@ -46,12 +250,11 @@
               "RelativeToolTip": "task-management\\Program.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAACIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T04:52:30.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T04:52:30.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 14,
               "Title": "TasksEntity.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Domain\\Entities\\TasksEntity.cs",
               "RelativeDocumentMoniker": "task-management\\Domain\\Entities\\TasksEntity.cs",
@@ -59,12 +262,11 @@
               "RelativeToolTip": "task-management\\Domain\\Entities\\TasksEntity.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T04:47:50.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T04:47:50.153Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "TaskRequest.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Application\\Dtos\\Request\\TaskRequest.cs",
               "RelativeDocumentMoniker": "task-management\\Application\\Dtos\\Request\\TaskRequest.cs",
@@ -72,12 +274,11 @@
               "RelativeToolTip": "task-management\\Application\\Dtos\\Request\\TaskRequest.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T04:20:20.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T04:20:20.993Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 16,
               "Title": "TaskService.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Application\\Service\\TaskService.cs",
               "RelativeDocumentMoniker": "task-management\\Application\\Service\\TaskService.cs",
@@ -85,12 +286,11 @@
               "RelativeToolTip": "task-management\\Application\\Service\\TaskService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAALsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T04:10:01.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T04:10:01.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 17,
               "Title": "TaskRepository.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\Infrastructure\\Persistence\\Repository\\TaskRepository.cs",
               "RelativeDocumentMoniker": "task-management\\Infrastructure\\Persistence\\Repository\\TaskRepository.cs",
@@ -98,18 +298,17 @@
               "RelativeToolTip": "task-management\\Infrastructure\\Persistence\\Repository\\TaskRepository.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAQwDwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T04:09:22.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T04:09:22.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
               "Title": "TaskController.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "task-management\\WebApi\\Controllers\\TaskController.cs",
               "ToolTip": "C:\\Users\\USUARIO\\Videos\\tht_task\\Backend\\task-management\\task-management\\WebApi\\Controllers\\TaskController.cs",
               "RelativeToolTip": "task-management\\WebApi\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T04:08:24.496Z",
               "EditorCaption": ""

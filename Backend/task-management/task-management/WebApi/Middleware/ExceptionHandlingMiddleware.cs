@@ -17,6 +17,10 @@ namespace task_management.WebApi.Middleware
             _logger = logger;
         }
 
+        /// <summary>
+        /// Método principal del middleware que captura y maneja excepciones.
+        /// </summary>
+        /// <param name="context">Contexto de la solicitud HTTP.</param>
         public async Task InvokeAsync(HttpContext context)
         {
             try
@@ -30,6 +34,11 @@ namespace task_management.WebApi.Middleware
             }
         }
 
+        /// <summary>
+        /// Maneja la excepción y devuelve una respuesta adecuada.
+        /// </summary>
+        /// <param name="context">Contexto de la solicitud HTTP.</param>
+        /// <param name="exception">Excepción capturada.</param>
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             var response = exception switch
@@ -51,6 +60,11 @@ namespace task_management.WebApi.Middleware
                 JsonSerializer.Serialize(response, jsonOptions));
         }
 
+        /// <summary>
+        /// Crea una respuesta para excepciones de tipo ApiException.
+        /// </summary>
+        /// <param name="exception">Excepción de tipo ApiException.</param>
+        /// <returns>Respuesta de API con el error.</returns>
         private static ApiResponse<object> CreateApiExceptionResponse(ApiException exception)
         {
             return ResponseApiBuilderService.Failure<object>(
@@ -59,7 +73,11 @@ namespace task_management.WebApi.Middleware
                 exception.StatusCode);
         }
 
-
+        /// <summary>
+        /// Crea una respuesta para excepciones no manejadas específicamente.
+        /// </summary>
+        /// <param name="exception">Excepción capturada.</param>
+        /// <returns>Respuesta de API con el error.</returns>
         private static ApiResponse<object> CreateDefaultExceptionResponse(Exception exception)
         {
             string message;

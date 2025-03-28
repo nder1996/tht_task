@@ -4,15 +4,31 @@ using task_management.Domain.Entities;
 
 namespace task_management.Infrastructure.Persistence.DBContext
 {
+
+    /// <summary>
+    /// Contexto de base de datos para la gestión de tareas
+    /// </summary>
     public class TaskDbContext : DbContext
     {
 
-
+        /// <summary>
+        /// Constructor que recibe las opciones de configuración del contexto
+        /// </summary>
+        /// <param name="options">Opciones de configuración de Entity Framework</param>
         public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options)
         {
         }
 
+        /// <summary>
+        /// Conjunto de datos para la entidad de tareas
+        /// </summary>
         public DbSet<TasksEntity> Tasks { get; set; }
+
+
+        /// <summary>
+        /// Configuración del modelo de datos durante la creación del contexto
+        /// </summary>
+        /// <param name="modelBuilder">Constructor de modelos de Entity Framework</param>
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
