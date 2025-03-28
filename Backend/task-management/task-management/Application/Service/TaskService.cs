@@ -107,7 +107,8 @@ namespace task_management.Application.Service
                     Status = taskEntity.status,
                     State = taskEntity.state,
                     CreatedAt = taskEntity.create_at ?? DateTime.MinValue, // Default fallback value
-                    UpdatedAt = taskEntity.update_at ?? DateTime.Now // Current time as fallback
+                    UpdatedAt = taskEntity.update_at ?? DateTime.Now, // Current time as fallback
+                    DueDate = taskEntity.due_date ?? DateTime.MaxValue, // Default fallback value
                 };
 
                 return ResponseApiBuilderService.SuccessResponse<TaskResponse>(
@@ -141,6 +142,7 @@ namespace task_management.Application.Service
                     Status = task.status,
                     State = task.state,
                     CreatedAt = task.create_at ?? DateTime.MinValue, // Default fallback value
+                    DueDate = task.due_date ?? DateTime.MaxValue, // Default fallback value
                     UpdatedAt = task.update_at ?? DateTime.Now // Current time as fallback
                 });
 
@@ -167,22 +169,27 @@ namespace task_management.Application.Service
                 if (task == null)
                     return ResponseApiBuilderService.ErrorResponse<string>(400, "DATOS_REQUERIDOS", "Los datos de la tarea son requeridos");
 
-                var existingTask = await _task_repository.GetByIdAsync(id);
+                // Obtenemos la entidad existente
+                var existingTask = await this._task_repository.GetByIdAsync(id);
                 if (existingTask == null)
                     return ResponseApiBuilderService.ErrorResponse<string>(404, "TAREA_NO_ENCONTRADA", "La tarea no existe");
 
-                var taskEntity = new TasksEntity
-                {
-                    id = id,
-                    title = task.Title,
-                    description = task.Description,
-                    due_date = DateTime.SpecifyKind(task.due_date, DateTimeKind.Utc),
-                    status = task.Status,
-                    state = task.state,
-                    update_at = DateTime.UtcNow
-                };
+                // Convertimos la fecha a UTC y comparamos
+                DateTime utcDueDate = DateTime.SpecifyKind(task.due_date, DateTimeKind.Utc);
 
-                return await _task_repository.UpdateAsync(taskEntity)
+                // Verificamos si la fecha cambió y es posterior a hoy
+                if (utcDueDate.Date < DateTime.UtcNow.Date)
+                    return ResponseApiBuilderService.ErrorResponse<string>(400, "FECHA_INVALIDA",
+                        "La fecha de vencimiento debe ser posterior a hoy");
+
+                // Actualizamos las propiedades
+                existingTask.title = task.Title;
+                existingTask.description = task.Description;
+                existingTask.due_date = utcDueDate;
+                existingTask.status = task.Status;
+
+                // Actualizamos la entidad
+                return await this._task_repository.UpdateAsync(existingTask)
                     ? ResponseApiBuilderService.SuccessResponse<string>("Tarea actualizada con éxito", "SUCCESS")
                     : ResponseApiBuilderService.ErrorResponse<string>(500, "ERROR_ACTUALIZACION", "No se pudo actualizar la tarea");
             }

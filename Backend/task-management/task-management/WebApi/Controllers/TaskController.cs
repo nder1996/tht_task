@@ -8,7 +8,7 @@ using task_management.Application.Dtos.Request;
 
 namespace task_management.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/")]
     [ApiController]
     public class TaskController : ControllerBase
     {
@@ -58,59 +58,5 @@ namespace task_management.WebApi.Controllers
             return StatusCode(response.Meta?.StatusCode ?? 200, response);
         }
 
-
-
-        [HttpGet("debug-table")]
-        public async Task<IActionResult> DebugTable()
-        {
-            try
-            {
-                await using var connection = _context.Database.GetDbConnection();
-                await connection.OpenAsync();
-
-                var sql = @"
-            SELECT column_name, data_type, character_maximum_length
-            FROM information_schema.columns
-            WHERE table_name = 'tasks'
-            ORDER BY ordinal_position;";
-
-                await _context.Database.OpenConnectionAsync();
-
-                await using var command = connection.CreateCommand();
-                command.CommandText = sql;
-
-                var result = new List<object>();
-
-                await using var reader = await command.ExecuteReaderAsync();
-
-                while (await reader.ReadAsync())
-                {
-                    result.Add(new
-                    {
-                        ColumnName = reader.GetString(0),
-                        DataType = reader.GetString(1),
-                        MaxLength = reader.IsDBNull(2) ? (int?)null : reader.GetInt32(2)
-                    });
-                }
-
-                return Ok(new { TableStructure = result });
-            }
-            catch (NpgsqlException ex)
-            {
-               // _logger.LogError(ex, "Database error while retrieving table structure");
-                return StatusCode(500, new { Error = "Database operation failed", Details = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                //_logger.LogError(ex, "Unexpected error in DebugTable method");
-                return StatusCode(500, new { Error = "An unexpected error occurred", Details = ex.Message });
-            }
-        }
-
-        [HttpGet("prueba")]
-        public IActionResult Prueba()
-        {
-            return Ok("Hola Mundo");
-        }
     }
 }

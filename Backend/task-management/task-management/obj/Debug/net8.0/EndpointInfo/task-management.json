@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Task/tasks": {
+    "/api/v1/tasks": {
       "get": {
         "tags": [
           "Task"
@@ -17,7 +17,7 @@
         }
       }
     },
-    "/api/Task/tasks/{id}": {
+    "/api/v1/tasks/{id}": {
       "get": {
         "tags": [
           "Task"
@@ -40,7 +40,7 @@
         }
       }
     },
-    "/api/Task/{id}": {
+    "/api/v1/{id}": {
       "delete": {
         "tags": [
           "Task"
@@ -103,7 +103,7 @@
         }
       }
     },
-    "/api/Task": {
+    "/api/v1": {
       "post": {
         "tags": [
           "Task"
@@ -127,30 +127,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Task/debug-table": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Task/prueba": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -206,7 +182,7 @@
           },
           "due_date": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           }
         },
         "additionalProperties": false

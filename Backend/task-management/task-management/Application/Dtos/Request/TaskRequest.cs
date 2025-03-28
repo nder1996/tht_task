@@ -27,19 +27,8 @@ namespace task_management.Application.Dtos.Request
         public DateTime UpdatedAt { get; set; }
 
         [Required(ErrorMessage = "La fecha de vencimiento es obligatoria")]
-        [DataType(DataType.Date)]
-        [FutureDate(ErrorMessage = "La fecha de vencimiento debe ser posterior a la fecha actual")]
-        public DateTime due_date { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime due_date { get; set; } = DateTime.UtcNow;
     }
 
-    public class FutureDateAttribute : ValidationAttribute
-    {
-        public override bool IsValid(object? value)
-        {
-            if (value is null)
-                return true;
-
-            return (DateTime)value > DateTime.Now;
-        }
-    }
 }

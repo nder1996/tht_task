@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using task_management.Application.Service;
 using task_management.Domain.Exceptions;
+using System.Text.Json;
+using task_management.Application.Dtos.Response;
 
 namespace task_management.WebApi.Middleware
 {
@@ -15,65 +17,62 @@ namespace task_management.WebApi.Middleware
 
         public async Task InvokeAsync(HttpContext context)
         {
+            var originalBodyStream = context.Response.Body;
+            using var memStream = new MemoryStream();
+            context.Response.Body = memStream;
+
+            // Crear opciones para serialización con camelCase
+            var jsonOptions = new JsonSerializerOptions
+            {
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+
             try
             {
                 await _next(context);
+                if (context.Response.StatusCode == 400 &&
+                    context.Response.ContentType?.Contains("application/problem+json") == true)
+                {
+                    memStream.Seek(0, SeekOrigin.Begin);
+                    var responseText = await new StreamReader(memStream).ReadToEndAsync();
+
+                    var validationProblem = JsonSerializer.Deserialize<ValidationProblemDetails>(responseText);
+                    var errorDescription = string.Join("; ", validationProblem.Errors
+                        .SelectMany(e => e.Value.Select(msg => $"{e.Key}: {msg}")));
+
+                    var response = ResponseApiBuilderService.ErrorResponse<object>(
+                        400, "VALIDACION", errorDescription);
+
+                    memStream.SetLength(0);
+                    // Usar opciones para serializar con camelCase
+                    await JsonSerializer.SerializeAsync(memStream, response, jsonOptions);
+                    context.Response.ContentType = "application/json";
+                }
             }
             catch (BadRequestException ex)
             {
-               // _logger.LogWarning(ex, "Error de validación");
-                await HandleExceptionAsync(context, ex, 400);
+                context.Response.StatusCode = 400;
+                memStream.SetLength(0);
+                // Usar opciones para serializar con camelCase
+                await JsonSerializer.SerializeAsync(memStream,
+                    ResponseApiBuilderService.ErrorResponse<object>(400, "VALIDATION_ERROR", ex.Message),
+                    jsonOptions);
+                context.Response.ContentType = "application/json";
             }
-            // Otros catch...
-        }
-
-        private async Task HandleExceptionAsync(HttpContext context, Exception exception, int statusCode)
-        {
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = statusCode;
-
-            // Usar tu servicio de respuesta personalizado
-            var response = ResponseApiBuilderService.Failure<object>(
-                errorCode: "VALIDATION_ERROR",
-                errorDescription: exception.Message,
-                statusCode: statusCode
-            );
-
-            await context.Response.WriteAsJsonAsync(response);
-        }
-    }
-
-    // También necesitas configurar un filtro personalizado para validaciones de modelo
-    public static class ConfigureModelValidationExtensions
-    {
-        public static IServiceCollection ConfigureModelValidation(this IServiceCollection services)
-        {
-            services.Configure<ApiBehaviorOptions>(options =>
+            finally
             {
-                options.InvalidModelStateResponseFactory = context =>
-                {
-                    var response = ResponseApiBuilderService.Failure<object>(
-                        errorCode: "VALIDATION_ERROR",
-                        errorDescription: GetValidationErrorMessage(context.ModelState),
-                        statusCode: 400
-                    );
-
-                    return new BadRequestObjectResult(response);
-                };
-            });
-
-            return services;
+                memStream.Seek(0, SeekOrigin.Begin);
+                await memStream.CopyToAsync(originalBodyStream);
+                context.Response.Body = originalBodyStream;
+            }
         }
 
-        private static string GetValidationErrorMessage(ModelStateDictionary modelState)
+    }
+    public static class ValidationExceptionMiddlewareExtensions
+    {
+        public static IApplicationBuilder UseCustomErrorHandling(this IApplicationBuilder builder)
         {
-            // Extrae los mensajes de error
-            var errors = modelState
-                .Where(e => e.Value.Errors.Count > 0)
-                .Select(e => $"{e.Key}: {string.Join(", ", e.Value.Errors.Select(err => err.ErrorMessage))}")
-                .ToList();
-
-            return string.Join("; ", errors);
+            return builder.UseMiddleware<ValidationExceptionMiddleware>();
         }
     }
 }

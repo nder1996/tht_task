@@ -54,8 +54,8 @@ namespace task_management.Infrastructure.Persistence.Repository
 
         public async Task<bool> UpdateAsync(TasksEntity task)
         {
-            task.update_at = DateTime.Now;
-            _context.Tasks.Update(task);
+            task.update_at = DateTime.UtcNow;
+            _context.Entry(task).State = EntityState.Modified;
             int rowsAffected = await _context.SaveChangesAsync();
             return rowsAffected > 0;
         }

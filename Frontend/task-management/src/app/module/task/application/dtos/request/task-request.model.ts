@@ -1,12 +1,12 @@
 export class TaskRequest {
     constructor(
-        public id?: number,
-        public titulo?: string,
-        public descripcion?: string,
-        public status?: string,
+        public Id?: number,
+        public Title?: string,
+        public Description?: string,
+        public Status?: string,
         public state?: string,
-        public createdAt?: Date,
-        public updatedAt?: Date,
+        public CreatedAt?: Date,
+        public UpdatedAt?: Date,
         public due_date?: Date
     ) {}
   }

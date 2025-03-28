@@ -2,7 +2,7 @@
   {
     "ContainingType": "task_management.WebApi.Controllers.TaskController",
     "Method": "Create",
-    "RelativePath": "api/Task",
+    "RelativePath": "api/v1",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "task_management.WebApi.Controllers.TaskController",
     "Method": "Delete",
-    "RelativePath": "api/Task/{id}",
+    "RelativePath": "api/v1/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "task_management.WebApi.Controllers.TaskController",
     "Method": "Update",
-    "RelativePath": "api/Task/{id}",
+    "RelativePath": "api/v1/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -54,28 +54,8 @@
   },
   {
     "ContainingType": "task_management.WebApi.Controllers.TaskController",
-    "Method": "DebugTable",
-    "RelativePath": "api/Task/debug-table",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "task_management.WebApi.Controllers.TaskController",
-    "Method": "Prueba",
-    "RelativePath": "api/Task/prueba",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "task_management.WebApi.Controllers.TaskController",
     "Method": "Task",
-    "RelativePath": "api/Task/tasks",
+    "RelativePath": "api/v1/tasks",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -85,7 +65,7 @@
   {
     "ContainingType": "task_management.WebApi.Controllers.TaskController",
     "Method": "GetById",
-    "RelativePath": "api/Task/tasks/{id}",
+    "RelativePath": "api/v1/tasks/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

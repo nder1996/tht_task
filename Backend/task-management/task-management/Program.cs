@@ -54,7 +54,7 @@ if (app.Environment.IsDevelopment())
 // Middleware personalizado
 
 app.UseCors("AllowLocalhost");
-app.UseMiddleware<ValidationExceptionMiddleware>();
+app.UseCustomErrorHandling();
 app.UseGlobalExceptionHandler();
 
 app.UseHttpsRedirection();

@@ -12,7 +12,7 @@ import { lastValueFrom } from 'rxjs';
 })
 export class TaskRepository implements ITareaRepositorio {
 
-  private apiUrl = `${environment.apiUrl}/Tareas`;
+  private apiUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) { }
   async getAllTask(): Promise<ApiResponse<TaskResponse[]>> {

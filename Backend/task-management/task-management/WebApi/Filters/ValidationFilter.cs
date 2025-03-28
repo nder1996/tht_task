@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using task_management.Application.Dtos.Response;
 using task_management.Application.Service;
 
 namespace task_management.WebApi.Filters
@@ -10,20 +11,17 @@ namespace task_management.WebApi.Filters
         {
             if (!context.ModelState.IsValid)
             {
-                var errors = context.ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage);
+                var errors = context.ModelState
+                    .Where(e => e.Value.Errors.Count > 0)
+                    .Select(e => $"{e.Key}: {e.Value.Errors.First().ErrorMessage}")
+                    .ToList();
 
-                var response = ResponseApiBuilderService.Failure<object>(
-                    errorCode: "VALIDATION_ERROR",
-                    errorDescription: string.Join(", ", errors),
-                    statusCode: 400
+                var response = new ApiResponse<object>(
+                    Meta: new Meta(StatusCode: StatusCodes.Status400BadRequest),
+                    Error: new ErrorDetails(Code: "validation_error", Description: string.Join(", ", errors))
                 );
 
-                context.Result = new ObjectResult(response)
-                {
-                    StatusCode = 400
-                };
+                context.Result = new BadRequestObjectResult(response);
             }
         }
 

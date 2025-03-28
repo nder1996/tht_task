@@ -1,14 +1,28 @@
 <p-toast />
 <p-confirmDialog />
 <div class="container-fluid py-4">
-
     <!-- Header Actions -->
     <div class="row">
         <div class="col-12 text-center" style="margin: 1rem;">
             <p-button label="AGREGAR TAREA" icon="pi pi-file-plus" [outlined]="true" severity="success"
-                class="w-100 w-md-auto shadow-sm" (click)="showTask=true">
+                class="w-100 w-md-auto shadow-sm" (click)="cargarModalAgregar()">
             </p-button>
         </div>
+        <div class="search-toolbar">
+            <div class="search-container">
+              <div class="search-box">
+                <span class="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <input type="number" class="search-input" [(ngModel)]="filtroId" placeholder="Digite el número de tarea que desea buscar">
+                <button class="search-button" (click)="getByIdTasks()">Buscar</button>
+              </div>
+              <button class="refresh-button" (click)="getTasks()">
+                <i class="fa fa-sync-alt"></i>
+                <span>Mostrar todos</span>
+              </button>
+            </div>
+          </div>
     </div>
 
     <!-- Table Container -->
@@ -126,11 +140,11 @@
                 </div>
 
                 <div class="col-12">
-                    <label htmlFor="state">Estado</label>
-                    <p-dropdown formControlName="state" [options]="[
+                    <label htmlFor="status">Estado</label>
+                    <p-dropdown formControlName="status" [options]="[
                             { label: 'PENDIENTE', value: 'PENDIENTE', severity: 'danger' },
-                            { label: 'EN PROGRESO', value: 'EN_PROGRESO', severity: 'warning', disabled: !actionEditarCrud },
-                            { label: 'COMPLETADA', value: 'COMPLETADA', severity: 'success', disabled: !actionEditarCrud }
+                            { label: 'EN PROGRESO', value: 'EN PROGRESO', severity: 'warning', disabled: !actionEditarCrud },
+                            { label: 'COMPLETADO', value: 'COMPLETADO', severity: 'success', disabled: !actionEditarCrud }
                         ]" optionLabel="label" optionValue="value" [showClear]="true"
                         placeholder="Seleccione el estado" appendTo="body" [style]="{ width: '380px' }">
 
